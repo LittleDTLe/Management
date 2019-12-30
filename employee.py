@@ -90,11 +90,11 @@ class Employee():
 
 #ONLY FOR TESTING PURPOSES IS IT HERE.
 #THE MAIN PROGRAM WILL BE RUN IN ANOTHER FILE
-login = login.login()
-logged = login.log()
+#login = login.login()
+#logged = login.log()
 me = Employee()
-if logged:
-    login.login.createMan()
-    me.store()
-    me.deleteEntry()
-    me.stored()
+#if logged is True:
+    #login.createMan()
+me.store()
+me.deleteEntry()
+me.stored()
