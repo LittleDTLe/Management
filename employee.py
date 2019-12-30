@@ -1,3 +1,11 @@
+'''
+TO DO: 
+-ADD A MENU
+-IF NOT LOGGED IN YOU CAN ONLY SEARCH FOR AN EMPLOYEE AND 
+THE RESULTS WILL BE LIMITED ex: NAME JOB TITLE ID YEARS IN COMPANY
+'''
+
+import login
 import csv
 import os.path
 from os import path
@@ -80,7 +88,13 @@ class Employee():
         os.remove("employees_edit.csv")
 
 
+#ONLY FOR TESTING PURPOSES IS IT HERE.
+#THE MAIN PROGRAM WILL BE RUN IN ANOTHER FILE
+login = login.login()
+logged = login.log()
 me = Employee()
-me.store()
-me.deleteEntry()
-me.stored()
+if logged:
+    login.login.createMan()
+    me.store()
+    me.deleteEntry()
+    me.stored()
