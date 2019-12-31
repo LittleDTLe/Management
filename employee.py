@@ -52,6 +52,7 @@ class Employee():
     
     #Function that reads the CSV file where the employee info is stored.
     #Will be used to extract info from specifi employees and format it.
+    #Static Method
     def stored(self):
         f = open("employees.csv")
         csv_f = csv.reader(f)
@@ -87,14 +88,27 @@ class Employee():
         out.close()
         os.remove("employees_edit.csv")
 
+    #SEARCH FOR SPECIFI EMPLOYEE WITHOUT LOGIN
+    @staticmethod
+    def specEmployee(self):
+        id = input("Enter employee id: ")
+        with open("employees.csv", "r") as inp:
+            for row in csv.reader(inp):
+                if id in row:
+                    #FORMATING IN PROGRESS.............
+                    print('ID \t NAME\t\t\t JOB TITLE\t\t\t')
+                    print('{:<10} {:<30} {:<30}'.format(*row))
+
+
 
 #ONLY FOR TESTING PURPOSES IS IT HERE.
 #THE MAIN PROGRAM WILL BE RUN IN ANOTHER FILE
-#login = login.login()
-#logged = login.log()
-me = Employee()
-#if logged is True:
-    #login.createMan()
-me.store()
-me.deleteEntry()
-me.stored()
+'''login = login.login()
+logged = login.log()
+print(logged)
+if logged is True:
+    me = Employee()
+    login.createMan()
+    me.store()
+    me.deleteEntry()
+    me.stored()'''
